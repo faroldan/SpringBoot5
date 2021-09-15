@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -18,8 +19,8 @@ import javax.validation.constraints.NotNull;
 import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
-@Table(name = "clientes")
-public class Cliente implements Serializable {
+@Table(name = "personas")
+public class Persona implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -36,11 +37,21 @@ public class Cliente implements Serializable {
 	private String email;
 
 	@NotNull
-	@Column(name = "create_at")
+	@Column(name = "fecha_nac")
 	@Temporal(TemporalType.DATE)
-	@DateTimeFormat(pattern="yyyy-MM-dd")
-	private Date createAt;
-
+	@DateTimeFormat(pattern="dd-MM-yyyy")
+	private Date fechaNac;
+	@NotEmpty
+	private Integer telefono;
+	@NotEmpty
+	private Integer celular;
+	@NotEmpty
+	private String direccion;
+	@NotEmpty
+	private String nacionalidad;
+	@Lob
+	@Column(name = "foto")
+	private byte[] foto;
 	public Long getId() {
 		return id;
 	}
@@ -73,13 +84,55 @@ public class Cliente implements Serializable {
 		this.email = email;
 	}
 
-	public Date getCreateAt() {
-		return createAt;
+
+	public Date getFechaNac() {
+		return fechaNac;
 	}
 
-	public void setCreateAt(Date createAt) {
-		this.createAt = createAt;
+	public void setFechaNac(Date fechaNac) {
+		this.fechaNac = fechaNac;
 	}
+
+	public Integer getTelefono() {
+		return telefono;
+	}
+
+	public void setTelefono(Integer telefono) {
+		this.telefono = telefono;
+	}
+
+	public Integer getCelular() {
+		return celular;
+	}
+
+	public void setCelular(Integer celular) {
+		this.celular = celular;
+	}
+
+	public String getDireccion() {
+		return direccion;
+	}
+
+	public void setDireccion(String direccion) {
+		this.direccion = direccion;
+	}
+
+	public String getNacionalidad() {
+		return nacionalidad;
+	}
+
+	public void setNacionalidad(String nacionalidad) {
+		this.nacionalidad = nacionalidad;
+	}
+
+	public byte[] getFoto() {
+		return foto;
+	}
+
+	public void setFoto(byte[] foto) {
+		this.foto = foto;
+	}
+
 
 	public static long getSerialversionuid() {
 		return serialVersionUID;
