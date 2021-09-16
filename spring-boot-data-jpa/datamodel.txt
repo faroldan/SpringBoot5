@@ -48,3 +48,5 @@ nom_cualif,
 descripcion,
 nivel -- campo numerico que expresa porcentaje
 
+
+https://unpocodejava.com/2013/01/14/usando-jpa-para-insertar-y-recuperar-blobs/
