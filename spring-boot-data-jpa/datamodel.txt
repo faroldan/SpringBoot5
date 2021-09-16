@@ -1,0 +1,50 @@
+-- modelo de datos App cv
+persona --> de quien esta loggeado, se toman los datos y se arma el cv
+id numerico auto_increment
+nombre,
+apellido,
+tel,
+cel,
+email,
+direccion,
+nacionalidad,
+fech_nac,
+foto,
+
+
+--- formacion academica de la persona, como puede tener mas de una, se indica con un campo codi
+id_persona,
+codi, 
+institucion,
+pais - provincia,
+fech_desde,
+fech_hasta,
+titulo obtenido
+
+-------- portfolio -- proyectos de la persona, como puede tener mas de una, se indica con un campo codi 
+id_persona
+item
+link
+imagen -- captura representativa del proyecto en cuestion
+descripcion,
+nombre
+tecnologia de desarrollo (mas de una en un solo campo, ej: "java, javascript, PL/SQL")
+
+----- experiencia de la persona, como puede tener mas de una, se indica con un campo codi 
+id_persona,
+codi, 
+institucion - empresa - freelance,
+pais - provincia,
+fech_desde,
+fech_hasta,
+item_portfolio -- id de item de portfolio de la persona 
+rol,
+tareas_realizadas
+
+-------cualificaciones -- de la persona, como puede tener mas de una, se indica con un campo codi  
+id_persona,
+codi, 
+nom_cualif,
+descripcion,
+nivel -- campo numerico que expresa porcentaje
+
