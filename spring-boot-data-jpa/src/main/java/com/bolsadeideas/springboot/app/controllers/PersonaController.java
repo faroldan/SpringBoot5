@@ -35,8 +35,8 @@ public class PersonaController {
 	public String crear(Map<String, Object> model) {
 
 		Persona persona = new Persona();
-		model.put("cliente", persona);
-		model.put("titulo", "Formulario de Cliente");
+		model.put("persona", persona);
+		model.put("titulo", "Formulario de Usuario");
 		return "form";
 	}
 	
