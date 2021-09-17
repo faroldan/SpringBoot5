@@ -16,18 +16,19 @@ import org.springframework.web.bind.support.SessionStatus;
 
 import com.bolsadeideas.springboot.app.models.dao.IPersonaDao;
 import com.bolsadeideas.springboot.app.models.entity.Persona;
+import com.bolsadeideas.springboot.app.models.service.IPersonaService;
 
 @Controller
 @SessionAttributes("persona")
 public class PersonaController {
 
 	@Autowired
-	private IPersonaDao personaDao;
+	private IPersonaService personaService;
 
 	@RequestMapping(value = "/listar", method = RequestMethod.GET)
 	public String listar(Model model) {
 		model.addAttribute("titulo", "Listado de usuarios");
-		model.addAttribute("personas", personaDao.findAll());
+		model.addAttribute("personas", personaService.findAll());
 		return "listar";
 	}
 	
@@ -46,7 +47,7 @@ public class PersonaController {
 		Persona persona = null;
 		
 		if(id > 0) {
-			persona = personaDao.findOne(id);
+			persona = personaService.findOne(id);
 		} else {
 			return "redirect:/listar";
 		}
@@ -62,7 +63,7 @@ public class PersonaController {
 			return "form";
 		}
 		
-		personaDao.save(persona);
+		personaService.save(persona);
 		status.setComplete();
 		return "redirect:listar";
 	}
@@ -71,7 +72,7 @@ public class PersonaController {
 	public String eliminar(@PathVariable(value="id") Long id) {
 		
 		if(id > 0) {
-			personaDao.delete(id);
+			personaService.delete(id);
 		}
 		return "redirect:/listar";
 	}
