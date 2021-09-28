@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap Resume Page Template</title>
+    <title th:text = "${titulo}"></title>
     <!-- Bootstrap -->
     <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -14,10 +14,12 @@
       <hr>
       <div class="row">
         <div class="col-6">
-          <h1>John Doe</h1>
+          <h1 th:text = "${persona.nombre}+' '+${persona.apellido}">John Doe</h1>
         </div>
         <div class="col-6">
-          <p class="text-right"><a href="">Download my Resume</a></p>
+          <p class="text-right">Descarga mi CV</p>
+          <a href="https://docs.google.com/document/d/1RpUzpEknk9GCqANuAWnr4PxRDHyiaKdd/edit?usp=sharing&ouid=109988070784635204991&rtpof=true&sd=true">Español</a>
+          <a href="https://docs.google.com/document/d/1Ss20_lKqqyZdeeTFkWAzdWYLBt0y-qAg/edit?usp=sharing&ouid=109988070784635204991&rtpof=true&sd=true">English</a>
         </div>
       </div>
       <hr>
@@ -26,19 +28,19 @@
           <div class="media">
             <img class="mr-3" src="file:///C|/Users/fabian/AppData/Roaming/Adobe/Dreamweaver 2021/es_ES/Configuration/Temp/Assets/eamE7C5.tmp/images/115X115.gif" alt="Generic placeholder image">
             <div class="media-body">
-              <h5 class="mt-0">Web Developer</h5>
-              Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+              <h5 class="mt-0">Analiste desarrollador Ssr. Oracle APEX</h5>
+              Esto viene de la base
             </div>
           </div>
         </div>
         <div class="col-md-4 col-sm-12">
           <div class="row justify-content-md-around m-1">
             <address>
-              <strong>John Doe</strong><br>
-              1355 Market St, Suite 900<br>
-              San Francisco, CA 94103<br>
-              <abbr title="Phone">P:</abbr> (123) 456-7890<br>
-              <a href="mailto:#">first.last@example.com</a>
+              <strong th:text = "${persona.nombre}+' '+${persona.apellido}">John Doe</strong><br>
+              <p th:text = "${persona.direccion}"></p><br>
+            
+              <abbr title="Phone" th:text = "${persona.celular}">P:</abbr> (123) 456-7890<br>
+              <a  href="mailto:" th:text="${persona.email}">first.last@example.com</a>
             </address>
           </div>
         </div>

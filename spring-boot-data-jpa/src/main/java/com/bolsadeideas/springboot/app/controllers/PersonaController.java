@@ -32,6 +32,22 @@ public class PersonaController {
 		return "listar";
 	}
 	
+	@RequestMapping(value = "/cv/{id}", method = RequestMethod.GET)
+	public String cv(@PathVariable(value="id") Long id, Map<String, Object> model) {
+		
+		Persona persona = null;
+		
+		if(id > 0) {
+			persona = personaService.findOne(id);
+			
+		} else {
+			return "redirect:/listar";
+		}
+		model.put("persona", persona);
+		model.put("titulo", "Curriculum Vitae");
+		return "cv";
+	}
+	
 	@RequestMapping(value = "/form")
 	public String crear(Map<String, Object> model) {
 
@@ -59,7 +75,7 @@ public class PersonaController {
 	@RequestMapping(value = "/form", method = RequestMethod.POST)
 	public String guardar(@Valid Persona persona, BindingResult result, Model model, SessionStatus status) {
 		if(result.hasErrors()) {
-			model.addAttribute("titulo", "Formulario de Cliente");
+			model.addAttribute("titulo", "Formulario de Persona");
 			return "form";
 		}
 		
