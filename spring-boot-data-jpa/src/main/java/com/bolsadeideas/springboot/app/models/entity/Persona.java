@@ -39,11 +39,11 @@ public class Persona implements Serializable {
 	@NotNull
 	@Column(name = "fecha_nac")
 	@Temporal(TemporalType.DATE)
-	@DateTimeFormat(pattern="dd-MM-yyyy")
+	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private Date fechaNac;
-	@NotEmpty
+	
 	private Integer telefono;
-	@NotEmpty
+	
 	private Integer celular;
 	@NotEmpty
 	private String direccion;
