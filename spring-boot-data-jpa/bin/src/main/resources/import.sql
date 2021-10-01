@@ -1,3 +1,4 @@
 /* Populate tables */
-INSERT INTO clientes (id, nombre, apellido, email, create_at) VALUES(1, 'Andres', 'Guzman', 'profesor@bolsadeideas.com', '2017-08-28');
-INSERT INTO clientes (id, nombre, apellido, email, create_at) VALUES(2, 'John', 'Doe', 'john.doe@gmail.com', '2017-08-28');
+INSERT INTO `curriculumbd`.`personas` (`id`, `apellido`, `celular`, `direccion`, `email`, `fecha_nac`, `nacionalidad`, `nombre`, `telefono`) VALUES ('1', 'Roldan', '1234', 'sdfjasdjf', 'qasd@asd.com', '1986-01-12', 'argentina', 'fabian', '24323423');
+INSERT INTO `curriculumbd`.`personas` (`id`, `apellido`, `celular`, `direccion`, `email`, `fecha_nac`, `nacionalidad`, `nombre`, `telefono`) VALUES ('2', 'Guzman', '1234', 'sdfjasdjf', 'qasd@asd.com', '1988-12-03', 'argentina', 'Josefina', '24323423');
+INSERT INTO `curriculumbd`.`personas` (`id`, `apellido`, `celular`, `direccion`, `email`, `fecha_nac`, `nacionalidad`, `nombre`, `telefono`) VALUES ('3', 'Roldan', '1234', 'sdfjasdjf', 'qasd@asd.com', '1986-01-12', 'argentina', 'tomas', '24323423');

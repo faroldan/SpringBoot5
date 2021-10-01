@@ -14,7 +14,7 @@
       <hr>
       <div class="row">
         <div class="col-6">
-          <h1 th:text = "${persona.nombre}+' '+${persona.apellido}"></h1>
+          <h1 th:text = "${persona.nombre}+' '+${persona.apellido}">John Doe</h1>
         </div>
         <div class="col-6">
           <p class="text-right">Descarga mi CV</p>
@@ -28,7 +28,7 @@
           <div class="media">
             <img class="mr-3" src="file:///C|/Users/fabian/AppData/Roaming/Adobe/Dreamweaver 2021/es_ES/Configuration/Temp/Assets/eamE7C5.tmp/images/115X115.gif" alt="Generic placeholder image">
             <div class="media-body">
-              <h5 class="mt-0">Analista desarrollador Ssr. Oracle APEX</h5>
+              <h5 class="mt-0">Analiste desarrollador Ssr. Oracle APEX</h5>
               Esto viene de la base
             </div>
           </div>
@@ -39,8 +39,8 @@
               <strong th:text = "${persona.nombre}+' '+${persona.apellido}">John Doe</strong><br>
               <p th:text = "${persona.direccion}"></p><br>
             
-              <abbr title="Phone" th:text = "${persona.celular}">P:</abbr><br>
-              <a  href="mailto:" th:text="${persona.email}"></a>
+              <abbr title="Phone" th:text = "${persona.celular}">P:</abbr> (123) 456-7890<br>
+              <a  href="mailto:" th:text="${persona.email}">first.last@example.com</a>
             </address>
           </div>
         </div>
